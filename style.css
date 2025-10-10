@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0A0811;
+  color: #fff;
+  font-family: 'Gantari', sans-serif;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 5%;
+  background: linear-gradient(90deg, #1a1a1a, #111);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fdd835;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #fdd835;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 5%;
+  background: linear-gradient(135deg, #1c1c1c, #0d0d0d);
+}
+
+.hero-content {
+  max-width: 45%;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+.hero-content span {
+  color: #fdd835;
+}
+
+.hero-content p {
+  margin: 1.2rem 0;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.hero-buttons .btn {
+  border: none;
+  padding: 0.8rem 1.5rem;
+  margin-right: 1rem;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.play {
+  background: linear-gradient(90deg, #fdd835, #ffb300);
+  color: #000;
+}
+
+.info {
+  background: none;
+  border: 2px solid #fdd835;
+  color: #fdd835;
+}
+
+.hero-image img {
+  width: 450px;
+  height: auto;
+  background: #333;
+  border-radius: 20px;
+}
+
+/* FEATURED */
+.featured {
+  padding: 4rem 5%;
+}
+
+.featured h2 span {
+  color: #fdd835;
+}
+
+.film-grid {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.film-card {
+  background: linear-gradient(180deg, #1B1823, #13101A);
+  border-radius: 20px;
+  padding: 1rem;
+  width: 30%;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05),
+              0 0 25px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.film-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(253, 216, 53, 0.3);
+}
+
+.film-card img {
+  width: 100%;
+  height: 350px;
+  background: #333;
+  border-radius: 15px;
+}
+
+.film-info h3 {
+  margin-top: 1rem;
+  color: #fdd835;
+}
+
+.trailer {
+  margin-top: 0.8rem;
+  padding: 0.5rem 1.2rem;
+  background: linear-gradient(90deg, #fdd835, #ffb300);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* TRENDING */
+.trending {
+  padding: 4rem 5%;
+}
+
+.trending h2 span {
+  color: #fdd835;
+}
+
+.trending-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+}
+
+.trend-card {
+  background: linear-gradient(180deg, #1B1823, #13101A);
+  border-radius: 15px;
+  padding: 0.8rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05),
+              0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.trend-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(253, 216, 53, 0.3);
+}
+
+.trend-card img {
+  width: 100%;
+  height: 250px;
+  background: #333;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.trend-card h4 {
+  color: #fff;
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.trend-card p {
+  color: #fdd835;
+  font-size: 0.9rem;
+}
+
+.trend-card p span {
+  color: #aaa;
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
+
+
+
+/* FOOTER */
+footer {
+  background: linear-gradient(180deg, #111, #0a0a0a);
+  padding: 3rem 5%;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.footer-logo {
+  font-size: 1.4rem;
+  color: #fdd835;
+  margin-bottom: 1rem;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links ul li {
+  margin: 5px 0;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #fdd835;
+}
+
+.footer-note {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: #888;
+}
