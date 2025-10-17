@@ -47,63 +47,109 @@ body {
 }
 
 /* HERO */
+/* HERO SECTION */
+/* ===== HERO SECTION ===== */
 .hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("images/Spiderman.png") no-repeat center center/cover;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 3rem 5%;
-  background: linear-gradient(135deg, #1c1c1c, #0d0d0d);
+  justify-content: flex-start;
+  padding: 0 8%;
+  color: #fff;
+  font-family: 'Gantari', sans-serif;
+  overflow: hidden;
 }
 
+/* dark gradient overlay for cinematic effect */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.9) 90%);
+  z-index: 1;
+}
+
+/* content positioning */
 .hero-content {
-  max-width: 45%;
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
 }
 
 .hero-content h1 {
-  font-size: 3rem;
-  line-height: 1.2;
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1rem;
 }
 
-.hero-content span {
-  color: #fdd835;
+.hero-content h1 span {
+  font-size: 2.5rem;
+  color: #f9c349; /* golden color for “No Way Home” */
 }
 
 .hero-content p {
-  margin: 1.2rem 0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: #e5e5e5;
+}
+
+/* buttons */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
   font-size: 1rem;
-  color: #ddd;
-}
-
-.hero-buttons .btn {
-  border: none;
-  padding: 0.8rem 1.5rem;
-  margin-right: 1rem;
-  border-radius: 30px;
   font-weight: bold;
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 12px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.play {
-  background: linear-gradient(90deg, #fdd835, #ffb300);
+.btn.play {
+  background-color: #fff;
   color: #000;
 }
 
-.info {
-  background: none;
-  border: 2px solid #fdd835;
-  color: #fdd835;
+.btn.play:hover {
+  background-color: #f9c349;
+  color: #000;
+  transform: scale(1.05);
 }
 
-.hero-image img {
-  width: 450px;
-  height: auto;
-  background: #333;
-  border-radius: 20px;
+.btn.info {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  backdrop-filter: blur(10px);
 }
+
+.btn.info:hover {
+  background-color: #f9c349;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* hide the old img tag if present */
+.hero-image img {
+  display: none;
+}
+
 
 /* FEATURED */
 .featured {
   padding: 4rem 5%;
+  
 }
 
 .featured h2 span {
@@ -114,6 +160,8 @@ body {
   display: flex;
   gap: 2rem;
   margin-top: 2rem;
+  justify-content: center; 
+  gap: 20px; 
 }
 
 .film-card {
@@ -124,6 +172,8 @@ body {
   box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05),
               0 0 25px rgba(0, 0, 0, 0.6);
   transition: transform 0.3s, box-shadow 0.3s;
+
+  gap: 20px; 
 }
 
 .film-card:hover {
@@ -136,6 +186,7 @@ body {
   height: 350px;
   background: #333;
   border-radius: 15px;
+
 }
 
 .film-info h3 {
@@ -216,6 +267,7 @@ footer {
   background: linear-gradient(180deg, #111, #0a0a0a);
   padding: 3rem 5%;
   text-align: center;
+  margin-top: 80px;
 }
 
 .footer-container {
@@ -252,4 +304,506 @@ footer {
   margin-top: 2rem;
   font-size: 0.8rem;
   color: #888;
+}
+
+
+body {
+  background-color: #1B1823;
+  font-family: "Gantari", sans-serif;
+  color: #fff;
+}
+
+/* Films Section Container */
+.films-section {
+  text-align: center;
+  padding: 60px 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.films-section h2 {
+  font-size: 2rem;
+  color: #fdd835;
+  margin-bottom: 30px;
+}
+
+/* Grid Layout */
+.films-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 4 per row max */
+  gap: 2rem;
+  justify-items: center;
+}
+
+/* Film Card Styling */
+.film-card {
+  background: linear-gradient(180deg, #1B1823, #13101A);
+  border-radius: 20px;
+  padding: 1rem;
+  width: 100%;
+  max-width: 280px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.film-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(253, 216, 53, 0.4);
+}
+
+/* Poster Image */
+.film-card img {
+  width: 100%;
+  height: 380px; /* balanced height */
+  object-fit: cover;
+  border-radius: 15px;
+  background: #2b2633;
+}
+
+/* Movie Title */
+.film-card h3 {
+  margin-top: 1rem;
+  color: #fdd835;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Rating and Votes */
+.film-card p {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+/* =========================
+   ⭐ PROFILE PAGE STYLING
+   ========================= */
+
+.profile-header {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  margin-top: 80px;
+  padding-top: 90px;
+}
+
+.profile-header .banner {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(253, 216, 53, 0.2);
+}
+
+.profile-info {
+  margin-top: -70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(180deg, #1B1823, #13101A);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05),
+              0 0 25px rgba(0, 0, 0, 0.6);
+}
+
+.profile-info .avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 4px solid #fdd835;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.profile-info .stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 1rem;
+}
+
+.profile-info .stats div {
+  text-align: center;
+}
+
+.profile-info .stats h3 {
+  color: #fdd835;
+  font-size: 1.5rem;
+}
+
+.profile-info .quote {
+  margin-top: 1.2rem;
+  font-style: italic;
+  color: #ddd;
+}
+
+.profile-info .socials {
+  margin-top: 1rem;
+}
+
+.profile-info .socials a img {
+  width: 25px;
+  height: 25px;
+  margin: 0 8px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s;
+}
+
+.profile-info .socials a img:hover {
+  transform: scale(1.2);
+  filter: brightness(1) invert(0) sepia(1) saturate(5) hue-rotate(40deg);
+}
+
+.subnav {
+  margin-top: 1.5rem;
+  font-weight: 600;
+}
+
+.subnav a {
+  text-decoration: none;
+  color: #fdd835;
+}
+
+.subnav a:hover {
+  text-decoration: underline;
+}
+
+/* FAVORITE FILMS SECTION */
+.favorites {
+  text-align: center;
+  padding: 4rem 8%;
+}
+
+.favorites h2 span {
+  color: #fdd835;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: linear-gradient(180deg, #1B1823, #13101A);
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05),
+              0 0 25px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(253, 216, 53, 0.3);
+}
+
+.card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.card p {
+  margin-top: 0.8rem;
+  color: #fdd835;
+  font-weight: bold;
+}
+
+/* RECENT ACTIVITIES */
+.activities {
+  padding: 4rem 8%;
+}
+
+.activities h2 span {
+  color: #fdd835;
+}
+
+.post {
+  background: linear-gradient(180deg, #1B1823, #13101A);
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05),
+              0 0 25px rgba(0, 0, 0, 0.6);
+}
+
+.post .user {
+  font-weight: 600;
+  color: #fdd835;
+  margin-bottom: 0.5rem;
+}
+
+.post h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.post .stars {
+  color: #fdd835;
+  margin-bottom: 1rem;
+}
+
+.post-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.post-content img {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.post-content p {
+  flex: 1;
+  color: #eee;
+  line-height: 1.5;
+}
+
+/* YOUR RATES */
+.rates {
+  padding: 4rem 8%;
+  text-align: center;
+}
+
+.rates h2 span {
+  color: #fdd835;
+}
+
+.rate-card {
+  display: inline-block;
+  background: linear-gradient(180deg, #1B1823, #13101A);
+  border-radius: 20px;
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05),
+              0 0 25px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.rate-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(253, 216, 53, 0.3);
+}
+
+.rate-card img {
+  width: 200px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.rate-card .stars {
+  color: #fdd835;
+  margin-top: 0.8rem;
+  font-size: 1.3rem;
+}
+
+/* ============================
+   ABOUT PAGE STYLING
+============================ */
+.about-page {
+  background-color: #0b0b10;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+
+}
+
+.about-page h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 30px;
+  font-weight: 700;
+  padding: 50px;
+  width: 90;
+}
+
+.about-page p {
+  color: #ccc;
+  line-height: 1.6;
+   padding: 50px;
+}
+
+/* --- Intro Section --- */
+.about-intro {
+  text-align: center;
+  margin-bottom: 80px;
+  padding: 50px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.1);
+}
+
+.about-intro h2 {
+  font-size: 1.8rem;
+  line-height: 1.6;
+   padding: 50px;
+}
+
+.about-intro .about-logo {
+  margin-top: 30px;
+}
+
+.about-intro img {
+  width: 120px;
+}
+
+.about-intro p {
+  margin-top: 10px;
+  font-style: italic;
+  color: #ffd700;
+}
+
+/* --- Value Cards Section --- */
+.about-values {
+  margin: 60px 0;
+}
+
+.about-values h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 1.6rem;
+  margin-bottom: 40px;
+}
+
+.value-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.value-cards .card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  width: 280px;
+  text-align: center;
+  padding: 30px 20px;
+  transition: 0.3s;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.1);
+}
+
+.value-cards .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+.value-cards img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.value-cards h3 {
+  color: #ffd700;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+/* --- Vision & Mission Section --- */
+.about-mission {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.1);
+  margin-bottom: 80px;
+}
+
+.about-mission h3 {
+  color: #ffd700;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.about-mission p {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+
+/* --- Team Section --- */
+.about-team {
+  text-align: center;
+  padding: 50px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.1);
+}
+
+.about-team h2 {
+  color: #fff;
+  font-size: 1.6rem;
+  margin-bottom: 40px;
+}
+
+.team-members {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.member img {
+  width: 140px;
+  height: 140px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.member img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+.member h4 {
+  color: #ffd700;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+/* --- Card Reuse (for consistency) --- */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.1);
+  padding: 30px;
+}
+
+/* --- ABOUT PAGE BACKGROUND GRADIENT --- */
+.about-page {
+  background: radial-gradient(circle at center, #1B1823 70%, #0f0d12 100%),
+              linear-gradient(to right, #d4af37 0%, transparent 10%, transparent 90%, #d4af37 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+}
+
+
+/* Responsive Tweaks */
+
+@media (max-width: 1024px) {
+  .films-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .film-card img {
+    height: 320px;
+  }
 }
