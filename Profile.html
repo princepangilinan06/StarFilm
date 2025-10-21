@@ -8,7 +8,9 @@
 </head>
 <body>
   <header class="navbar">
-    <div class="logo">⭐ STARFILMS</div>
+    <div class="logo"><a href="index.html">⭐ STARFILMS</a></div>
+
+
     <nav>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -17,12 +19,20 @@
         <li><a href="About.html">About Us</a></li>
         <li><a href="LogPage.html">Log In / Sign Up</a></li>
       </ul>
+
+  
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
     </nav>
   </header>
 
   <section class="profile-header">
-    <img src="images/banner.png" class="banner" alt="Banner">
+
     <div class="profile-info">
+        <img src="images/banner.png" class="banner" alt="Banner">
       <img src="images/pfp.JPG" class="avatar" alt="Profile Picture">
       <div class="stats">
         <div><h3>555</h3><p>FILMS RATED</p></div>
@@ -33,14 +43,14 @@
   
       </div>
       <div class="subnav">
-        <a href="#">REVIEWS</a> | 
-        <a href="#">QUOTES</a> | 
-        <a href="#">FILMS WATCHED</a>
+        <a href="#rate">REVIEWS</a> | 
+        <a href="#quotes">QUOTES</a> | 
+        <a href="#fav">FILMS WATCHED</a>
       </div>
     </div>
   </section>
 
-  <section class="favorites">
+  <section class="favorites" id="fav">
     <h2>YOUR <span>FAVORITES</span></h2>
     <div class="movie-grid">
       <div class="card"><img src="images/interstwellar.png"><p>INTERSTELLAR</p></div>
@@ -50,7 +60,7 @@
     </div>
   </section>
 
-  <section class="activities">
+  <section class="activities" id="quotes">
     <h2>RECENT <span>ACTIVITIES</span></h2>
 
     <div class="post">
@@ -84,7 +94,7 @@
     </div>
   </section>
 
-  <section class="rates">
+  <section class="rates" id="rate">
   <h2>YOUR <span>RATES</span></h2>
   <table class="rates-table">
     <thead>
@@ -133,7 +143,7 @@
       <div class="footer-links">
         <h4>Quick Hover</h4>
         <ul>
-          <li><a href="Home.html">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="Films.html">Films</a></li>
           <li><a href="Profile.html">Profile</a></li>
           <li><a href="About.html">About Us</a></li>
@@ -149,5 +159,36 @@
     </div>
     <p class="footer-note">© 2025 STARFILMS. All rights reserved. | Privacy Policy | Terms of Service</p>
   </footer>
+
+   <script>
+    (function() {
+      const header = document.querySelector('.navbar');
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+
+      function toggleNav() {
+        const opened = header.classList.toggle('nav-open');
+        hamburger.setAttribute('aria-expanded', opened ? 'true' : 'false');
+      }
+
+      hamburger.addEventListener('click', toggleNav);
+
+      
+      navLinks.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A' && window.innerWidth <= 480) {
+          header.classList.remove('nav-open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 480) {
+          header.classList.remove('nav-open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
