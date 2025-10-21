@@ -10,9 +10,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- NAVBAR -->
+ 
   <header class="navbar">
-    <div class="logo">⭐ STARFILMS</div>
+    <div class="logo"><a href="index.html">⭐ STARFILMS</a></div>
+
+   
     <nav>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -21,12 +23,18 @@
         <li><a href="About.html">About Us</a></li>
         <li><a href="LogPage.html">Log In / Sign Up</a></li>
       </ul>
+
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
     </nav>
   </header>
 
-  <!-- ABOUT PAGE -->
+ 
   <div class="about-page">
-    <!-- Intro Section -->
+   
     <section class="about-intro">
       <h2>We're here to help you relive the<br>movies you once loved and<br>treasure the ones you'll always<br>keep in your heart</h2>
       <div class="about-logo">
@@ -35,7 +43,7 @@
       </div>
     </section>
 
-    <!-- Values Section -->
+  
     <section class="about-values">
       <h2>It's possible to do this through:</h2>
       <div class="value-cards">
@@ -57,7 +65,7 @@
       </div>
     </section>
 
-    <!-- Vision & Mission -->
+  
     <section class="about-mission">
       <div>
         <h3>Vision</h3>
@@ -69,7 +77,7 @@
       </div>
     </section>
 
-    <!-- Team Section -->
+    
     <section class="about-team">
       <h2>Behind <span>STARFILMS</span></h2>
       <div class="team-members">
@@ -89,7 +97,7 @@
     </section>
   </div>
 
-  <!-- FOOTER -->
+ 
    <footer>
     <div class="footer-container">
       <div class="footer-logo">⭐ STARFILMS</div>
@@ -98,7 +106,7 @@
       <div class="footer-links">
         <h4>Quick Hover</h4>
         <ul>
-          <li><a href="Home.html">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="Films.html">Films</a></li>
           <li><a href="Profile.html">Profile</a></li>
           <li><a href="About.html">About Us</a></li>
@@ -114,5 +122,36 @@
     </div>
     <p class="footer-note">© 2025 STARFILMS. All rights reserved. | Privacy Policy | Terms of Service</p>
   </footer>
+
+   <script>
+    (function() {
+      const header = document.querySelector('.navbar');
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+
+      function toggleNav() {
+        const opened = header.classList.toggle('nav-open');
+        hamburger.setAttribute('aria-expanded', opened ? 'true' : 'false');
+      }
+
+      hamburger.addEventListener('click', toggleNav);
+
+      
+      navLinks.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A' && window.innerWidth <= 480) {
+          header.classList.remove('nav-open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 480) {
+          header.classList.remove('nav-open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
